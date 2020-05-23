@@ -1,7 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState} from 'react';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 function HomeScreen() {
   return (
@@ -9,6 +10,22 @@ function HomeScreen() {
       <Text>Home!</Text>
     </View>
   );
+}
+
+function AnfahrtScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Anfahrt!</Text>
+    </View>
+  )
+}
+
+function KontaktScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Kontakt!</Text>
+    </View>
+  )
 }
 
 function SettingsScreen() {
@@ -19,27 +36,32 @@ function SettingsScreen() {
   );
 }
 
+
+
 const Tab = createBottomTabNavigator();
 
 
 
 export default function App() {
+
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Anfahrt" component={AnfahrtScreen} />
+        <Tab.Screen name="Kontakt" component={KontaktScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
+  
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffe',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
-
