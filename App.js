@@ -1,5 +1,5 @@
-import React, { useEffect, useState} from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -7,7 +7,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
+      <Image style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}}
+        source={require('./ihrewerbung.jpg')}
+      />
     </View>
   );
 }
