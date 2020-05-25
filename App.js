@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, View, Image } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+const logo = {
+  uri: 'https://reactnative.dev/img/tiny_logo.png',
+  width: 164,
+  height: 164
+};  //Optional, Konstate "logo" ist ersetzbar durch die beiden Pfade in 18 und 19. 
+
 function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Image style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}}
-        source={require('./ihrewerbung.jpg')}
-      />
-    </View>
-  );
+return (
+  <ScrollView>
+   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Image source={require('./pipe_fist.png')} />
+      <Text>Lak Abdulkerim!</Text>
+      <Image style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}} source={require('./ihrewerbung.jpg')} />  
+      </View>
+  </ScrollView>
+)
 }
 
 function AnfahrtScreen() {
