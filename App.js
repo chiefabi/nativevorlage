@@ -3,6 +3,7 @@ import { ActivityIndicator, FlatList, StyleSheet, Text, View, Image, ScrollView}
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import InstagramEmbed from 'react-native-embed-instagram'  
 
 const logo = {
   uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -14,7 +15,7 @@ function HomeScreen() {
 return (
   <ScrollView>
    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Image source={require('./pipe_fist.png')} />
+      <Image style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}} source={require('./pipe_fist.png')} />
       <Text>Lak Abdulkerim!</Text>
       <Image style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}} source={require('./ihrewerbung.jpg')} />  
       </View>
@@ -26,6 +27,15 @@ function AnfahrtScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Anfahrt!</Text>
+    </View>
+  )
+}
+
+function InstagramScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <InstagramEmbed id="CAvMqpMKp-e" style={{width: 400, height: 400, resizeMode: 'stretch', alignItems: 'stretch'}} />
+      <InstagramEmbed />
     </View>
   )
 }
@@ -59,6 +69,7 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Anfahrt" component={AnfahrtScreen} />
+        <Tab.Screen name="Instagram" component={InstagramScreen} />
         <Tab.Screen name="Kontakt" component={KontaktScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
